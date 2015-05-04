@@ -33,8 +33,41 @@
     
     self.mapView.showsUserLocation = YES;
     self.mapView.showsPointsOfInterest =YES;
+
+//set long and lat
+    
+    double lat = 43.641566;
+    double lng = -79.387057;
+    
+    CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(lat, lng);
+    
+    /*
+     A MKPlacemark object stores placemark data for a given latitude and longitude. Placemark data includes information such as the country, state, city, and street address associated with the specified coordinate. You can initialize a placemark using the initWithPlacemark: inherited method or the initWithCoordinate:addressDictionary: method specifying a coordinate and address dictionary.
+     */
+
+    MKPlacemark *placemark= [[MKPlacemark alloc]initWithCoordinate:coord
+                                                 addressDictionary:nil];
+    
+    MKMapItem *mapItem = [[MKMapItem alloc]initWithPlacemark:placemark];
+    
+    [mapItem openInMapsWithLaunchOptions:nil];
+    
+    
+    
+    
     // Do any additional setup after loading the view, typically from a nib.
 }
+-(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
+    
+    MKAnnotationView *view = [self.mapView dequeueReusableAnnotationViewWithIdentifier:@"annoView"];
+    if (!view) {
+        view = [[MKAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:@"annoView"];
+    
+    }
+    return view;
+}
+
+    
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
