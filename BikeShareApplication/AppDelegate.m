@@ -5,9 +5,9 @@
 //  Created by Craig Stojsin on 2015-05-04.
 //  Copyright (c) 2015 CraigCode. All rights reserved.
 //
-
+#import "UIColor+UIColor_Flat.h"
 #import "AppDelegate.h"
-
+#import "MapViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -16,7 +16,29 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    
     // Override point for customization after application launch.
+    
+    //Creating a tabBarController programatticaly and setting the root view controller
+    
+    // do anuy additional setup after loading the view, usually from a nib
+    
+    MapViewController *mapViewController = [[MapViewController alloc]init];
+    mapViewController.title = @"Maps";
+    
+    UIViewController *moreInforViewController = [[UIViewController alloc]init];
+    moreInforViewController.title = @"More Info";
+    
+    mapViewController.view.backgroundColor = [UIColor wetAsphalt];
+    moreInforViewController.view.backgroundColor = [UIColor emerald];
+    
+    UITabBarController *tabBarController = [[UITabBarController alloc]init];
+    
+    [tabBarController setViewControllers:@[mapViewController,moreInforViewController]];
+    self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
+    self.window.rootViewController = tabBarController;
+    
     return YES;
 }
 

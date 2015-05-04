@@ -9,5 +9,18 @@
 #import <UIKit/UIKit.h>
 
 @interface UIColor (UIColor_Flat)
++ (UIColor *)turquoise;
++ (UIColor *)emerald;
++ (UIColor *)peterRiver;
++ (UIColor *)amethyst;
++ (UIColor *)wetAsphalt;
++ (UIColor *)greenSee;
++ (UIColor *)nephritis;
++ (UIColor *)belizeHole;
+
++ (UIColor *)lightGrey;
++ (UIColor *)airbnbPink;
+
++ (UIColor *)randomFlatColor;
 
 @end
