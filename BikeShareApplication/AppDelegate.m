@@ -5,6 +5,8 @@
 //  Created by Craig Stojsin on 2015-05-04.
 //  Copyright (c) 2015 CraigCode. All rights reserved.
 //
+#import "MoreInfoVC.h"
+#import "SecondViewController.h"
 #import "UIColor+UIColor_Flat.h"
 #import "AppDelegate.h"
 #import "MapViewController.h"
@@ -24,10 +26,15 @@
     
     // do anuy additional setup after loading the view, usually from a nib
     
+    SecondViewController *secondViewController = [[SecondViewController alloc]init];
+    secondViewController.title=@"Steps";
+    UINavigationController *secondNavigationController =[[UINavigationController alloc]initWithRootViewController:secondViewController];
+
+    
     MapViewController *mapViewController = [[MapViewController alloc]init];
     mapViewController.title = @"Maps";
     
-    UIViewController *moreInforViewController = [[UIViewController alloc]init];
+    MoreInfoVC *moreInforViewController = [[MoreInfoVC alloc]init];
     moreInforViewController.title = @"More Info";
     
     mapViewController.view.backgroundColor = [UIColor wetAsphalt];
@@ -35,7 +42,7 @@
     
     UITabBarController *tabBarController = [[UITabBarController alloc]init];
     
-    [tabBarController setViewControllers:@[mapViewController,moreInforViewController]];
+    [tabBarController setViewControllers:@[mapViewController,moreInforViewController,secondNavigationController]];
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
     self.window.rootViewController = tabBarController;
     
