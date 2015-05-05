@@ -8,12 +8,10 @@
 #import "HTTPCommunication.h"
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
-@interface Stations : NSObject <MKAnnotation>
+@interface StationManager : NSObject
+
 @property (nonatomic, strong) HTTPCommunication *http;
-@property (nonatomic, strong) NSNumber *responseID;
 
-
-
--(void)retrieveUrl;
+- (void)listOfStationsSucess:(void (^)(NSArray *listOfStation))sucess;
 
 @end
