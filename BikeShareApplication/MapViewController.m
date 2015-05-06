@@ -5,6 +5,7 @@
 //  Created by Craig Stojsin on 2015-05-04.
 //  Copyright (c) 2015 CraigCode. All rights reserved.
 //
+#import "MyAnnotationView.h"
 #import "BikeStation.h"
 #import "StationManager.h"
 #import "HTTPCommunication.h"
@@ -13,6 +14,7 @@
 @interface MapViewController ()
 
 @property (nonatomic, strong) StationManager *stations;
+
 @end
 
 @implementation MapViewController
@@ -22,6 +24,7 @@
     
     
     self.stations = [[StationManager alloc]init];
+    
     
     _mapView =[[MKMapView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     [self.view addSubview:_mapView];
@@ -39,45 +42,63 @@
     self.mapView.showsPointsOfInterest =YES;
     
     
+
+    
 //    UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 200)];
 //    [self.view addSubview:tableView];
+
+}
+
+-(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
+{
+    MyAnnotationView *annotationView = [[MyAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:@"altPin"];
+    return annotationView;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+   
+    
+
     [self.stations listOfStationsSucess:^(NSArray *listOfStation) {
-//        self.mapView addAnnotation:
+        
+        for (BikeStation *bikeStation in listOfStation)
+        {
+            
+        
+            [self.mapView addAnnotation:bikeStation];
+        }
+        
+        
+        NSLog(@"%@",listOfStation);
     }];
 }
 
--(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
-    
-    MKAnnotationView *view = [self.mapView dequeueReusableAnnotationViewWithIdentifier:@"annoView"];
-    if (!view) {
-        view = [[MKAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:@"annoView"];
-        view.image = [UIImage imageNamed:@"altPin.png"];
-    }
-    return view;
-    
-}
+
+
+
+
+
+
+
 - (void)mapView:(MKMapView *)mv didAddAnnotationViews:(NSArray *)views
 
 {
-
     MKAnnotationView *annotationView = [views objectAtIndex:0];
     
     id<MKAnnotation> mp = [annotationView annotation];
     
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance([mp coordinate] ,250,250);
-    
-    
-    [mv setRegion:region animated:YES];
-    
+    if (mp == mv.userLocation)
+    {
+        MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance([mp coordinate] ,250,250);
+        
+        
+        [mv setRegion:region animated:YES];
+    }
 }
 
     
-
 
 //}
 //-(void)passDataForward

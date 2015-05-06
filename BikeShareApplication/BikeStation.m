@@ -10,10 +10,6 @@
 
 @implementation BikeStation
 
-//-(id)initWithCoordinate:(CLLocationCoordinate2D)c title:(NSString *)t subTitle:(NSString *)st
-//{
-//    
-//}
 
 - (instancetype)initWithDictionary:(NSDictionary *)dict
 {
@@ -21,13 +17,13 @@
     if (self)
     {
         self.title = dict[@"stationName"];
-        self.title = dict[@"availableDocks"];
-        self.title = dict[@"totalDocks"];
-        self.title = dict[@"availableBikes"];
-        NSNumber *lng =dict[@"longitude"];
-        [lng doubleValue];
-        NSNumber *lat = dict[@"latitude"];
-        [lat doubleValue];
+        self.availableDocks = dict[@"availableDocks"];
+        self.totalDocks = dict[@"totalDocks"];
+        self.availableBikes = dict[@"availableBikes"];
+        self.lng =dict[@"longitude"];
+        self.lat = dict[@"latitude"];
+        
+        self.coordinate = CLLocationCoordinate2DMake([_lat doubleValue], [_lng doubleValue]);
     }
     return self;
 }

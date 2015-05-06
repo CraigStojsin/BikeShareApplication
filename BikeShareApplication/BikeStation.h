@@ -7,13 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
 @interface BikeStation : NSObject<MKAnnotation>
 
-@property(nonatomic,readwrite) CLLocationCoordinate2D coordinate;
-@property(nonatomic,copy) NSString *title;
-@property(nonatomic,copy) NSString *subTitle;
+@property (nonatomic,readwrite) CLLocationCoordinate2D coordinate;
+@property (nonatomic,copy) NSString *title;
+@property (nonatomic,copy) NSString *availableDocks;
+@property (nonatomic,copy) NSString *totalDocks;
+@property (nonatomic,copy) NSString *availableBikes;
+@property (nonatomic,copy) NSNumber *lng;
+@property (nonatomic,copy) NSNumber *lat;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dict;
 

@@ -11,9 +11,6 @@
 
 @implementation StationManager
 
-{
-    NSDictionary *stations;
-}
 
 - (instancetype)init
 {
@@ -46,10 +43,10 @@
                 BikeStation *station = [[BikeStation alloc] initWithDictionary:dict];
                 [resultList addObject:station];
             }
-            if (sucess)
-            {
+          
+            
                 sucess(resultList);
-            }
+            
         }
     }];
    

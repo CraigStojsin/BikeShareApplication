@@ -26,6 +26,7 @@
 		39D0FAC21AF90B060091D7B3 /* StationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D0FAC11AF90B060091D7B3 /* StationManager.m */; };
 		39D0FAC51AF945F80091D7B3 /* MoreInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D0FAC41AF945F80091D7B3 /* MoreInfoVC.m */; };
 		39D0FAC81AF94ACA0091D7B3 /* BikeStation.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D0FAC71AF94ACA0091D7B3 /* BikeStation.m */; };
+		39D0FB071AFA9C8C0091D7B3 /* MyAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39D0FB061AFA9C8C0091D7B3 /* MyAnnotationView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,8 @@
 		39D0FAC41AF945F80091D7B3 /* MoreInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreInfoVC.m; sourceTree = "<group>"; };
 		39D0FAC61AF94ACA0091D7B3 /* BikeStation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BikeStation.h; sourceTree = "<group>"; };
 		39D0FAC71AF94ACA0091D7B3 /* BikeStation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BikeStation.m; sourceTree = "<group>"; };
+		39D0FB051AFA9C8C0091D7B3 /* MyAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAnnotationView.h; sourceTree = "<group>"; };
+		39D0FB061AFA9C8C0091D7B3 /* MyAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAnnotationView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +170,8 @@
 				39D0FABA1AF8FD720091D7B3 /* HTTPCommunication.h */,
 				39D0FABB1AF8FD720091D7B3 /* HTTPCommunication.m */,
 				39D0FAC01AF90B060091D7B3 /* StationManager.h */,
+				39D0FB051AFA9C8C0091D7B3 /* MyAnnotationView.h */,
+				39D0FB061AFA9C8C0091D7B3 /* MyAnnotationView.m */,
 				39D0FAC11AF90B060091D7B3 /* StationManager.m */,
 				39D0FAC61AF94ACA0091D7B3 /* BikeStation.h */,
 				39D0FAC71AF94ACA0091D7B3 /* BikeStation.m */,
@@ -297,6 +302,7 @@
 				39D0FA731AF7DC220091D7B3 /* MapViewController.m in Sources */,
 				39D0FAC81AF94ACA0091D7B3 /* BikeStation.m in Sources */,
 				39D0FA701AF7DC220091D7B3 /* AppDelegate.m in Sources */,
+				39D0FB071AFA9C8C0091D7B3 /* MyAnnotationView.m in Sources */,
 				39D0FA6D1AF7DC220091D7B3 /* main.m in Sources */,
 				39D0FAC51AF945F80091D7B3 /* MoreInfoVC.m in Sources */,
 			);
