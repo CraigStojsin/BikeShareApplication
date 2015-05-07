@@ -10,7 +10,7 @@
 #import "StationManager.h"
 #import "HTTPCommunication.h"
 #import "MapViewController.h"
-#import "SecondViewController.h"
+
 @interface MapViewController ()
 
 @property (nonatomic, strong) StationManager *stations;
@@ -44,16 +44,21 @@
     
 
     
-//    UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 200)];
-//    [self.view addSubview:tableView];
+    UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 200)];
+    [self.view addSubview:tableView];
 
 }
+
 
 -(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
     MyAnnotationView *annotationView = [[MyAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:@"altPin"];
+    
+    
     return annotationView;
 }
+
+
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -92,7 +97,7 @@
     if (mp == mv.userLocation)
     {
         MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance([mp coordinate] ,250,250);
-        
+         
         
         [mv setRegion:region animated:YES];
     }

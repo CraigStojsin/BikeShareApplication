@@ -10,19 +10,30 @@
 
 @implementation MyAnnotationView
 
+
 - (id)initWithAnnotation:(id<MKAnnotation>)annotation reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithAnnotation:annotation reuseIdentifier:reuseIdentifier];
-    UIImage *altPin = [UIImage imageNamed:@"altPin"] ;
+    
+    if (self){
+        
+        UIImage *altPin = [UIImage imageNamed:@"altPin"] ;
     self.image = altPin;
+   
+    
     self.canShowCallout =YES;
-  
+    
+
     
     
+    
+    
+    }
     return self;
-    
-    
 }
+
+
+
 
 /*
 // Only override drawRect: if you perform custom drawing.
