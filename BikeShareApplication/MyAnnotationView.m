@@ -19,12 +19,12 @@
         
         UIImage *altPin = [UIImage imageNamed:@"altPin"] ;
     self.image = altPin;
-   
-    
-    self.canShowCallout =YES;
-    
+   self.canShowCallout =YES;
 
-    
+
+    self.rightCalloutAccessoryView =[UIButton buttonWithType:UIButtonTypeCustom];
+        
+        
     
     
     

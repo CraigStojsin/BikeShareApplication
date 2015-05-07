@@ -17,6 +17,7 @@
 @property (nonatomic,copy) NSString *availableBikes;
 @property (nonatomic,copy) NSNumber *lng;
 @property (nonatomic,copy) NSNumber *lat;
+@property (nonatomic,copy) NSString *subtitle;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dict;
 

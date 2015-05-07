@@ -20,6 +20,7 @@
         self.availableDocks = dict[@"availableDocks"];
         self.totalDocks = dict[@"totalDocks"];
         self.availableBikes = dict[@"availableBikes"];
+         self.subtitle = [NSString stringWithFormat:@"Number of Docks:%.1f,Number of Bikes:%.1f",[self.availableDocks doubleValue],[self.availableBikes doubleValue]];
         self.lng =dict[@"longitude"];
         self.lat = dict[@"latitude"];
         
