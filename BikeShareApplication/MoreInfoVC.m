@@ -47,7 +47,7 @@
         {
             
             
-            [self.moreInfoVC addAnnotation:bikeStation];
+//            [self.moreInfoVC addAnnotation:bikeStation];
         }
      
     
