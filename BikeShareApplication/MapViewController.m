@@ -5,6 +5,7 @@
 //  Created by Craig Stojsin on 2015-05-04.
 //  Copyright (c) 2015 CraigCode. All rights reserved.
 //
+#import "MoreInfoVC.h"
 
 #import "MyAnnotationView.h"
 #import "BikeStation.h"
@@ -45,8 +46,7 @@
     
 
     
-    UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 200)];
-    [self.view addSubview:tableView];
+   
 
 }
 
@@ -104,8 +104,11 @@
     }
 }
 
-    
 
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+{
+    MoreInfoVC *controller = [[MoreInfoVC alloc]init];
+    [self.navigationController pushViewController:controller animated:YES];}
 //}
 //-(void)passDataForward
 //{

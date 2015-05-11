@@ -7,7 +7,7 @@
 //
 
 #import "MyAnnotationView.h"
-
+#import "MoreInfoVC.h"
 @implementation MyAnnotationView
 
 
@@ -21,18 +21,19 @@
     self.image = altPin;
    self.canShowCallout =YES;
 
+        
+        
+        self.leftCalloutAccessoryView = [[UIImageView alloc]
+                                           initWithImage:
+                                           [UIImage imageNamed:@"altPin"]];
+    
+        self.rightCalloutAccessoryView =[UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    
 
-    self.rightCalloutAccessoryView =[UIButton buttonWithType:UIButtonTypeCustom];
-        
-        
-    
-    
     
     }
     return self;
 }
-
-
 
 
 /*

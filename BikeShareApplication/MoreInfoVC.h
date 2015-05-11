@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MoreInfoVC : UIViewController
+@interface MoreInfoVC : UIViewController 
+
+
+@property (nonatomic, strong) UILabel *numberOfDocks;
+
+@property (strong,nonatomic) UILabel *titleLabel;
 
 @end

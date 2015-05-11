@@ -29,24 +29,27 @@
     
     MapViewController *mapViewController = [[MapViewController alloc]init];
     mapViewController.title = @"Maps";
+    UINavigationController *navigationMapVC = [[UINavigationController alloc]initWithRootViewController:mapViewController];
     
     MoreInfoVC *moreInforViewController = [[MoreInfoVC alloc]init];
     moreInforViewController.title = @"More Info";
+//    UINavigationController *navigationMoreInfoVC = [[UINavigationController alloc]initWithRootViewController:moreInforViewController];
     
     mapViewController.view.backgroundColor = [UIColor wetAsphalt];
-    moreInforViewController.view.backgroundColor = [UIColor emerald];
     
-    UITabBarController *tabBarController = [[UITabBarController alloc]init];
     
-    [tabBarController setViewControllers:@[mapViewController,moreInforViewController]];
+//    UITabBarController *tabBarController = [[UITabBarController alloc]init];
+//    
+//    [tabBarController setViewControllers:@[navigationMapVC,navigationMoreInfoVC]];
+    
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
-    self.window.rootViewController = tabBarController;
+    self.window.rootViewController = navigationMapVC;
+    [self.window makeKeyAndVisible];
     
     return YES;
 }
 
-    
-    
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
